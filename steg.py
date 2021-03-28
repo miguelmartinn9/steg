@@ -75,3 +75,35 @@ class Steg():                           #instantiate a class which allows stegan
         else:
             return t + ' failed checksum'
 
+steg = Steg()
+
+print("What would you like to do?")
+print("1. Encode text into an image")
+print("2. Decode text from an image")
+print("Enter the number: ")
+number = input()
+
+if number == "1":
+        print("Please enter the path of the image you want to use")
+        imageToUse = input()
+
+        print("Now enter the text you want to hide in the image")
+        inputString = input()
+
+        print("Finally, enter the name of the new generated image")
+        outputImage = input()
+
+        steg.encode(imageToUse,inputString,outputImage)
+
+        print("Done.")
+
+elif number == "2":
+        print("Enter the name or path of the image you wish to get texxt from")
+        image = input()
+        hidden_string_or_key = steg.decode(image)
+        print(hidden_string_or_key)
+
+else:
+        print("nothing was input")
+
+
